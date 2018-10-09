@@ -5,6 +5,9 @@
  * @date 2018/10/9
  */
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author 武琦川@hand-china.com
  * @version 1.0
@@ -29,10 +32,26 @@ public class Board {
      */
     public Board(int edgeNum){
         arr = new Integer[edgeNum+edgePlus][edgeNum+edgePlus];
+        List<Integer> list = new ArrayList<>();
         this.edgNum = edgeNum;
         for(int i = 1; i<=edgeNum;i++){
             for(int j = 1;j<=edgeNum;j++){
-                arr[i][j] = 1+(int)(Math.random()*9);
+                if(i>edgeNum/2){
+                    //后一半赋值从集合随机访问取数据来保证产生偶数个随机数
+                    int r= (int)(Math.random()*list.size());
+                    //如果集合这个未知为空则重新随机访问集合直到该未知不空
+                    while (list.get(r) == null){
+                        r = (int)(Math.random()*list.size());
+                    }
+                    arr[i][j] = list.get(r);
+                    list.remove(r);
+
+                }else{
+                    //头一般赋值的时候产生随机数并放入集合
+                    arr[i][j] = 1+(int)(Math.random()*9);
+                    list.add(arr[i][j]);
+                }
+
             }
         }
         //初始化最外层的可连通边路
