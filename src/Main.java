@@ -7,12 +7,12 @@ public class Main {
         int edgNum = 4;
         int edgNumPlus = 2;
         Board board = new Board(edgNum);
-        Figure figure = new Figure();
+        BreadthFirstSearch bfs = new BreadthFirstSearch();
         while (true){
             System.out.println("-----当前棋盘-----");
             board.showArr();
-            Point a = new Point();
-            Point b = new Point();
+            Node a = new Node(0,0,0,0,null,null);
+            Node b = new Node(0,0,0,0,null,null);
             Scanner scan = new Scanner(System.in);
             System.out.println("请输入第一个坐标的X :");
             a.x = scan.nextInt();
@@ -34,7 +34,7 @@ public class Main {
             if(b.y >edgNum+edgNumPlus-1){
                 continue;
             }
-            if(figure.LinksToEliminate(board,a,b)){
+            if(bfs.bfs(a,b,board)){
                 System.out.println("连接消除成功，请继续");
             }else{
                 System.out.println("连接消除失败，请继续");

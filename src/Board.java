@@ -17,7 +17,10 @@ import java.util.List;
  */
 
 public class Board {
+    //存放棋盘的数组
     private Integer[][] arr;
+    //用来标记的数组
+    private Integer[][] mark;
     private final static int edgePlus = 2;
     private int edgNum;
     /**
@@ -32,6 +35,13 @@ public class Board {
      */
     public Board(int edgeNum){
         arr = new Integer[edgeNum+edgePlus][edgeNum+edgePlus];
+        mark = new Integer[edgeNum+edgePlus][edgeNum+edgePlus];
+        //将用作标记的棋盘初始化全为0
+        for(int i = 0; i<=edgeNum+edgePlus-1;i++){
+            for(int j = 0;j<=edgeNum+edgePlus-1;j++){
+                mark[i][j] = 0;
+            }
+        }
         List<Integer> list = new ArrayList<>();
         this.edgNum = edgeNum;
         for(int i = 1; i<=edgeNum;i++){
@@ -71,6 +81,18 @@ public class Board {
         return arr;
     }
 
+    public Integer[][] getMark() {
+        return mark;
+    }
+
+    /**
+     * @description: 输出当前棋盘情况
+     * @author WuQiChuan
+     * @date 2018/10/14 14:40
+     * @param
+     * @return void
+     * @version: 1.0
+     */
     void showArr(){
         for(int i = 0;i<edgNum+edgePlus;i++){
             for(int j = 0;j<edgNum+edgePlus;j++){
