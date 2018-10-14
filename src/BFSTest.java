@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.util.Scanner;
 
-public class Main {
+public class BFSTest {
 
     public static void main(String[] args) {
         int edgNum = 4;
@@ -9,7 +9,15 @@ public class Main {
         Board board = new Board(edgNum);
         BreadthFirstSearch bfs = new BreadthFirstSearch();
         while (true){
-            System.out.println("-----当前棋盘-----");
+            System.out.println("-----当前棋盘-坐标分布----");
+            System.out.println("x->0->1->2");
+            System.out.println("y");
+            System.out.println("|");
+            System.out.println("0");
+            System.out.println("|");
+            System.out.println("1");
+            System.out.println("|");
+            System.out.println("2");
             board.showArr();
             Node a = new Node(0,0,0,0,null);
             Node b = new Node(0,0,0,0,null);
