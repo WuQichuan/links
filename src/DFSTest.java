@@ -8,15 +8,9 @@ public class DFSTest {
         Board board = new Board(edgNum);
         DepthFirstSearch dfs = new DepthFirstSearch();
         while (true){
+            System.out.println("x->从左到右0->n");
+            System.out.println("y->从上到下0->n");
             System.out.println("-----当前棋盘-坐标分布----");
-            System.out.println("x->0->1->2");
-            System.out.println("y");
-            System.out.println("|");
-            System.out.println("0");
-            System.out.println("|");
-            System.out.println("1");
-            System.out.println("|");
-            System.out.println("2");
             board.showArr();
             Node a = new Node(0,0,0,0,null);
             Node b = new Node(0,0,0,0,null);
