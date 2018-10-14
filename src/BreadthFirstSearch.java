@@ -4,6 +4,7 @@ import java.util.Queue;
 /**
  * @author WuQiChuan
  * @Description: 广度优先搜索
+ * 便于调试的输出未删除，暂时注释，如需调试可放开注释观察算法执行情况
  * @Date: Created in:2018/10/14 14:27
  * @Version: 1.0
  */
@@ -124,7 +125,6 @@ public class BreadthFirstSearch {
 
                 //如果新点没有被走过，并且新点的是可以走的通路,则步长+1，入队，标记走过的点
                 if(mark[newNode.x][newNode.y] != 1 && board.getArr()[newNode.x][newNode.y] == 0){
-                    //System.out.println("新节点入队");
                     queue.offer(newNode);
                     mark[newNode.x][newNode.y] = 1;
                 }

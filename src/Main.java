@@ -45,6 +45,7 @@ public class Main {
                     }
                 }
                 if(clearFlag){
+                    //全部消除成功，扩大棋盘
                     System.out.println("全部消除成功！");
                     edgNum = edgNumPlus+2*edgNumPlus;
                     board = new Board(edgNum);
