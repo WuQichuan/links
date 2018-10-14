@@ -24,6 +24,7 @@ public class DepthFirstSearch {
             {0,-1}//向上前进一个单位
     };
     public boolean dfs(Node star,Node end,Board board){
+        //对需要的变量进行初始化
         successFlag = false;
         shortStack = null;
         minStep = 999;
@@ -62,7 +63,7 @@ public class DepthFirstSearch {
             /*System.out.println("|");
             System.out.println("新节点信息"+newNode);
             System.out.println("目标节点信息"+nodeEnd);*/
-            //如果节点的当前前进方向不等于现在的探索方向则拐角数+1并将前进方向改为新的方向
+            //如果节点的当前前进方向不等于现在的探索方向则拐角数+1
             if(newNode.prev != null){
                 Node compare = newNode;
                 //记录当前坐标

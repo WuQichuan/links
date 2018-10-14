@@ -73,7 +73,7 @@ public class BreadthFirstSearch {
                 Node newNode = new Node(nowNode.x+ nextDirection[i][0],nowNode.y+nextDirection[i][1],nowNode.step+1,nowNode.turn,nowNode);
                 //接下来对这个新位置进行判断
 
-                //如果节点的当前前进方向不等于现在的探索方向则拐角数+1并将前进方向改为新的方向
+                //如果节点的当前前进方向不等于现在的探索方向则拐角数+1
                 if(newNode.prev != null){
                     Node compare = newNode;
                     //记录当前坐标
