@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * @author WuQiChuan
@@ -109,12 +110,19 @@ public class BreadthFirstSearch {
                 //说明找到了目标点
                 if(newNode.x == nodeEnd.x && newNode.y == nodeEnd.y){
                     System.out.println("链接成功，路径长度为："+newNode.step);
-                    Node show = newNode;
-                    System.out.println("最短路径依次为（倒叙）：");
-                    while (show != null){
-                        System.out.println("(x="+show.x+",y="+show.y+")");
-                        show = show.prev;
+                    Node listNode = newNode;
+                    System.out.println("最短路径依次为：");
+                    Stack<Node> stack = new Stack<>();
+                    while (listNode != null){
+                        stack.push(listNode);
+                        listNode = listNode.prev;
                     }
+                    //依次出栈，为了将倒叙输出变成正序
+                    while (!stack.isEmpty()){
+                        Node top = stack.pop();
+                        System.out.println("(x="+top.x+",y="+top.y+")");
+                    }
+
                     return true;
                 }
                 //如果在棋盘的新点位置不通的话，则continue，进行下次循环（更换方向再尝试）

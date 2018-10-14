@@ -51,7 +51,7 @@ public class Board {
 
                 }else{
                     //头一般赋值的时候产生随机数并放入集合
-                    arr[i][j] = 1+(int)(Math.random()*edgeNum*edgeNum);
+                    arr[i][j] = 1+(int)(Math.random()*edgeNum*edgePlus);
                     list.add(arr[i][j]);
                 }
 
