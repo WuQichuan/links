@@ -11,7 +11,7 @@ import java.awt.*;
  * @author 武琦川@hand-china.com
  * @version 1.0
  * @name Figure
- * @description
+ * @description 折点个数判断的类，不好，已经废弃
  * @date 2018/10/9 15:36
  */
 
